@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,17 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -40,16 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        //handling  options menu item click
+
+        switch (item.getItemId()) {
+            case R.id.menuItem1:
+                Toast.makeText(this, "Menu Item 1 Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menuItem2:
+                Toast.makeText(this, "Menu Item 2 Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menuItem3:
+                Toast.makeText(this, "Menu Item 3 Clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }
