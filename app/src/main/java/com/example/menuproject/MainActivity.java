@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -44,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Menu Item 3 Clicked", Toast.LENGTH_SHORT).show();
                 return true;
             default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return false;
     }
 }
