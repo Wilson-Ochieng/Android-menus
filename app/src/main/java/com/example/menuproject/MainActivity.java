@@ -19,7 +19,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        }
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -28,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        //handling  options menu item click
-
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.menuItem1:
                 Toast.makeText(this, "Menu Item 1 Clicked", Toast.LENGTH_SHORT).show();
@@ -45,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Menu Item 3 Clicked", Toast.LENGTH_SHORT).show();
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
-        }
 
+                    return super.onOptionsItemSelected(item);
+            }
+        }
     }
-}
